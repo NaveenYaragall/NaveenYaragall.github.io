@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <title>
+            Hotel Booking Form
+        </title>
+    </head>
+    <font color="white">
+    <body background="C:\Users\Naveen\Pictures\Saved Pictures\assign-7.jpg">
+        <form action="destnation.html" method="GET" align="center" width="200">
+            <h1>
+				<b> HOTEL SEA ROCK </b>
+			</h1>
+            <marquee direction="left" behaviour="alternate">Wel-Come to HOTEL SEA ROCK <sub> (you live we care!)</sub></marquee>
+
+            <fieldset>
+                <legend align="center">Personal Details</legend>
+				<label for="name" font color="white">UserName: </label> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+				<input type="text" name="UserNameame" id="name" autofocus placeholder="UserName" pattern="[a-zA-Z]{3,}" title="Please Enter name(minimum 3 Letters)" required>
+				<br>
+				<br>
+                <label for="email">E-mail: </label> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+				<input type="text" name="email" id="email" required autofocus placeholder="E-mail" pattern="[a-zA-Z]{3,}@[a-zA-Z]{3,}[.]{1}[a-zA-Z]{2,}" title="Please Enter valid E-mail address in format : example@example.com">
+				<br>
+				<br>
+                
+				<label for="phone">Phone Number: </label>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+				<input type="tel" name="phone" id="phone"  required placeholder="Phone Number" pattern="[0-9]{10}" title="Please Enter 10 digit Phone Number">
+				<br>
+				<br>
+                <label for="address">Residential Address: </label>&nbsp &nbsp &nbsp &nbsp &nbsp 
+                <input type="text" id="address" name="description" required>
+                <br>
+                <br>
+                <label for="nationality">Nationality: </label> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+				<select name="country required">
+					<option value="India">India </option>
+					<option value="Other">Other </option>
+				</select>
+				<br>
+				<br>
+                <label for="identification">Identification Suppling: </label> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+				<select name="Indentification">
+					<option value="Aadhar card">Aadhar Card </option>
+					<option value="Passport">Passport </option>
+                    <option value="Driving Lience">Driving Lience </option>
+                    <option value="Voter ID">Voter ID </option>
+				</select>
+                <br>
+                <br>
+            </fieldset>
+            <br>
+            <br>
+            <fieldset>
+                <legend>Booking Details</legend> 
+				<label for="check-in">CHECK-IN Date:</label>&nbsp &nbsp &nbsp &nbsp &nbsp
+				<input type="date" id="check-in" name="date" min="2016-03-21" required>
+				<br>
+				<br>
+                <label for="check-out">CHECK-OUT Date:</label>&nbsp &nbsp &nbsp
+				<input type="date" id="check-out" name="date" min="2016-03-21">
+				<br>
+				<br>
+                <label for="noofguests">Number Of Guests(max 4):</label>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+				<input type="number" name="noofguest" min="1" max="4" id="noofguests" required>
+                <br>
+				<br>
+                <p>Do you require Meals to Room? 
+				Yes: <input type="radio" name="emals" value="yes" checked>
+				No: <input type="radio" name="emals" value="no">
+				</p>
+				<br>
+				<br>
+                <label for="balcony">Do you require Balcony in Room</label>
+				<input type="checkbox" name="balcony" value="yes" checked id="balcony">
+				<br>
+				<br>
+                <input type="submit" id="submit" value="Submit" onclick="func()"></input>
+            </fieldset>
+        </form>
+    </body>
+    </font>
+    <script type="text/javascript">
+		function func()
+		{
+			var s1,s2;
+			s1=parseInt(document.getElementById("check-in").value);
+			s2=parseInt(document.getElementById("check-out").value);
+			if (s1>s2) {
+                alert("Invalid Checkout Date");
+            }
+		}
+	</script>
+</html>
