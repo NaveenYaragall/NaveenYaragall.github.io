@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> PUC admission form </title>
+		            <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+    </head>
+  <body bgcolor="#38ACEC">
+<fieldset>
+  <center><h2>PUC APPLICATION FORM</h2></center>
+  </fieldset>
+  <fieldset>
+<form name="myform">
+	<table>
+	<tr>
+       <td>Student Name: &nbsp;&nbsp;&nbsp;&nbsp;
+           <input type = "text"  id = "name"  required="1"="1"/>(as per SSLC marks card)
+        <br/></br></td>
+		</tr>
+		<tr>
+		<td>
+        Student Dob:&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type = "Date"  id = "age"  required="1"="1"/>
+        <br /></br></td>
+		</tr>
+		<tr>
+		<td>
+	Sex:&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="radio" name="sex"
+value="m"/>Male
+<input type="radio" name="sex"
+value="f"/>Female<br></br></td></tr>
+<tr>
+<td>
+Year of Admission:&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="radio" name="year" value="first"/>I PUC 
+<input type="radio" name="year" value="Second"/>II PUC <br></br>
+</td>
+</tr>
+<tr>
+<td>
+Combination:&nbsp;&nbsp;&nbsp;&nbsp;(P-physics C-chemistry M-maths B-biology Cs-computer science S-statistics)
+<select name="comb">
+<option value="pcmb">PCMB</option>
+<option value="pcms">PCMS</option>
+<option value="pcmcs">PCMCs</option></select>
+<br></br>
+</td>
+</tr>
+<tr>
+<td>
+Percentage: <input type="percentage" name="per" required="1">(according to SSLC Marks Card)<br></br>
+</td>
+</tr>
+<tr>
+<td>
+Name of the school last studied with Address:&nbsp;&nbsp;&nbsp;&nbsp;
+<textarea name = "aspirations"  rows = "3"  cols = "40"  required="1"></textarea><br></br>
+</td>
+</tr>
+<tr>
+<td>
+Caste :&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="radio" name="caste" value="first"/>GM
+<input type="radio" name="caste" value="Second"/> CAT-1
+<input type="radio" name="caste" value="third"/>CAT-2A 
+<input type="radio" name="caste" value="fourth"/>CAT-2B 
+<input type="radio" name="caste" value="five"/>CAT-3A 
+<input type="radio" name="caste" value="Six"/>CAT-3B 
+<input type="radio" name="caste" value="Seven"/>SC
+<input type="radio" name="caste" value="Eight"/>ST <br></br>
+</td>
+<tr>
+<td>
+Blood Group:&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="bg">
+<option value="A+">A+</option>
+<option value="A-">A-</option>
+<option value="B+">B+</option>
+<option value="B-">B-</option>
+<option value="AB-">AB-</option>
+<option value="AB+">AB</option>
+<option value="O+">O+</option>
+<option value="O-">O-</option></select>
+<br></br>
+</td>
+</tr>
+<tr>
+<td>
+Parents Mobile Number:(ddd-ddd-dddd)&nbsp;&nbsp;&nbsp;&nbsp;<input type = "text"  id = "phone"  required="1"/><br></br>
+</td>
+<td>
+Parents Email-id:&nbsp;&nbsp;&nbsp;&nbsp;<input type = "email"  id = "emailp"  required="1"/><br></br>
+</td>
+</tr>
+<tr>
+<td>
+Guardians Mobile Number:(ddd-ddd-dddd)&nbsp;&nbsp;&nbsp;&nbsp;<input type = "text"  id = "phoneg" /><br></br>
+</td>
+<td>
+Guardians Email-id:&nbsp;&nbsp;&nbsp;&nbsp;<input type = "email"  id = "emailg" /><br></br>
+</td>
+</tr>
+<tr>
+<td>
+Fathers Name:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="txtfather"/>&nbsp;&nbsp;&nbsp;&nbsp;
+Occupation:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="txtnum"/><br></br>
+</td>
+</tr>
+<tr>
+<td>
+Mothers Name:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="txtmother"/>&nbsp;&nbsp;&nbsp;&nbsp;
+Occupation:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="txtmum"/><br></br>
+</td>
+</tr>
+<tr>
+<td>
+Guardians Name:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="txtguardian"/>&nbsp;&nbsp;&nbsp;&nbsp;
+Occupation:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="txtgua"/><br></br>
+</td>
+</tr>
+<tr>
+<td>
+Present Address:&nbsp;&nbsp;&nbsp;&nbsp;<textarea name = "presentaddr"  rows = "3"  cols = "40"  required="1"/></textarea><br></br>&nbsp;&nbsp;&nbsp;&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+Permanent Address:&nbsp;&nbsp;&nbsp;&nbsp;<textarea name = "permanentaddr"  rows = "3"  cols = "40"  required="1"/></textarea><br></br>&nbsp;&nbsp;&nbsp;&nbsp;
+</td>
+</tr>
+<tr>
+    <td>
+         <input type="button" id="btnsubmit" value="SUBMIT" onclick="ReadValues()">
+          <input type="reset" value="RESET" id="btnreset" onclick="resetvalues()"/>
+    </td>
+    </tr>
+</table>
+  <p id="myparagraph"></p>
+    </form>
+	 </fieldset>
+	    <script type="text/javascript">
+		function ReadValues()
+{
+	if(myform.name.value=="")
+		alert('the name field should not be empty');
+	else if(myform.age.value=="")
+		alert('the dob field should not be empty');
+	else if(myform.sex.value=="")
+		alert('the sex field should not be empty');
+	else if(myform.year.value=="")
+		alert('the year of admission field should not be empty');
+	else if(myform.per.value=="")
+		alert('the Percentage field should not be empty');
+	else if(myform.presentaddr.value=="")
+		alert('the present address field should not be empty');
+	else if(myform.phone.value=="")
+		alert('the parents phone number field should not be empty');
+	else
+	{
+	document.getElementById('myparagraph').innerHTML='NAME:' +myform.name.value+ '<br/>' +'DOB:' +myform.age.value+'<br/>' + 'SEX:'+myform.sex.value +'<br/>'+ 'Year of Admission:'+myform.year.value +'<br/>'+ 'Combination:'+myform.comb.value +'<br/>'+  'Caste:'+myform.caste.value +'<br/>'+ 'Blood Group:'+myform.bg.value +'<br/>'+ 'Parent Mobile Number:'+myform.phone.value +'<br/>'+ 'Email-id:'+myform.emailp.value +'<br/>'+ 'Guardians Mobile Number:'+myform.phoneg.value +'<br/>'+ 'Guardians Email id:'+myform.emailg.value +'<br/>'+ 'Fathers Name:'+myform.txtfather.value +'<br/>'+ 'Father Occupation:'+myform.txtnum.value +'<br/>'+ 'Mothers Name:'+myform.txtmother.value +'<br/>'+ 'Mothers Occupation:'+myform.txtmum.value +'<br/>'+ 'Guardians Name:'+myform.txtguardian.value +'<br/>'+ 'Guardians Occupation:'+myform.txtgua.value +'<br/>'+ 'Present Address:'+myform.presentaddr.value +'<br/>'+ 'Permanent Address:'+myform.permanentaddr.value +'<br/>';
+
+	}
+}
+function resetvalues()
+{
+	
+if(btnreset)
+	{
+		if(myform.name.value=="")
+		{
+			alert('no values entered');
+		}
+		else
+		{
+				alert('the reset button is pressed so the previous values are cleared');
+		}
+	}
+	
+}
+</script>
+    </body>
+    </html>
